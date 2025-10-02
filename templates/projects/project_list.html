@@ -1,0 +1,40 @@
+{% extends 'base/base_simple.html' %}
+
+{% block title %}Projeler - Yusuf Turgay Çiğer{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Projelerim</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for project in projects %}
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            {% if project.featured_image %}
+            <img src="{{ project.featured_image.url }}" alt="{{ project.title }}" class="w-full h-48 object-cover">
+            {% endif %}
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2">{{ project.title }}</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ project.description|truncatewords:20 }}</p>
+                
+                {% if project.technology_stack %}
+                <div class="mb-4">
+                    <span class="text-sm text-gray-500">Teknolojiler: {{ project.technology_stack }}</span>
+                </div>
+                {% endif %}
+                
+                <div class="flex justify-between items-center">
+                    <a href="{{ project.get_absolute_url }}" class="text-blue-600 hover:text-blue-800">Detaylar</a>
+                    {% if project.demo_url %}
+                    <a href="{{ project.demo_url }}" target="_blank" class="text-green-600 hover:text-green-800">Canlı Demo</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-span-full text-center py-12">
+            <p class="text-gray-500">Henüz proje yok.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

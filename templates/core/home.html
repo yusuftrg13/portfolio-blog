@@ -1,0 +1,215 @@
+﻿{% extends 'base/base_simple.html' %}
+
+{% block title %}Profesyonel Veri Analizi ve Web Geliştirme Çözümleri - Yusuf Turgay Çiğer{% endblock %}
+{% block meta_description %}Veri analizi, web geliştirme ve Python programlama alanlarında profesyonel hizmetler. Modern teknolojiler ile çözüm ortaklığı.{% endblock %}
+
+{% block content %}
+<div class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-secondary text-white py-20 lg:py-32 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-accent-600/10 to-secondary-900/20"></div>
+            <!-- Animated geometric shapes -->
+            <div class="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-accent-500/10 to-primary-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-primary-500/5 to-accent-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
+                <div class="lg:w-1/2 animate-fade-in">
+                    <div class="mb-6">
+                        <span class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white/90 mb-4 glass-effect">
+                            <i class="fas fa-code mr-2"></i>
+                            Veri Analisti & Web Geliştirici
+                        </span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+                        <span class="bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent">
+                            Verilerinizi İçgörülere
+                        </span>
+                        <br>
+                        <span class="text-primary-300">Fikirlerinizi</span>
+                        <br>
+                        <span class="text-white">Dijital Çözümlere Dönüştürüyoruz</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-300 max-w-2xl leading-relaxed">
+                        <strong class="text-white">Yusuf Turgay Çiğer</strong> ile profesyonel veri analizi ve web geliştirme hizmetleri. 
+                        Python, veri analizi, modern web teknolojileri ve sistem entegrasyonu alanlarında uzman çözümler.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="/contact/" class="group bg-white text-secondary-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 corporate-shadow-lg inline-flex items-center justify-center">
+                            <span>İletişime Geçin</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="/projects/" class="group border-2 border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                            <span>Projelerimizi İnceleyin</span>
+                            <i class="fas fa-external-link-alt ml-2 group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image/Graphics -->
+                <div class="hidden lg:block lg:w-1/2 lg:pl-12">
+                    <div class="relative animate-slide-up">
+                        <div class="glass-effect rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <div class="space-y-4">
+                                <!-- Data visualization mockup -->
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-4 h-4 bg-primary-400 rounded-full animate-pulse"></div>
+                                    <div class="flex-1 h-2 bg-gradient-to-r from-primary-400 to-accent-400 rounded"></div>
+                                    <span class="text-sm text-white/80">94%</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-4 h-4 bg-accent-400 rounded-full animate-pulse delay-200"></div>
+                                    <div class="flex-1 h-2 bg-gradient-to-r from-accent-400 to-primary-400 rounded" style="width: 78%"></div>
+                                    <span class="text-sm text-white/80">78%</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-4 h-4 bg-primary-300 rounded-full animate-pulse delay-400"></div>
+                                    <div class="flex-1 h-2 bg-gradient-to-r from-primary-300 to-accent-300 rounded" style="width: 92%"></div>
+                                    <span class="text-sm text-white/80">92%</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 text-center">
+                                <i class="fas fa-chart-bar text-4xl text-primary-300 mb-2"></i>
+                                <p class="text-white/90 font-medium">Gerçek Zamanlı Analitik</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white/60 text-xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 bg-white dark:bg-secondary-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-accent-50/30 dark:from-secondary-800 dark:to-secondary-900"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold text-secondary-900 dark:text-white mb-4">
+                    Uzmanlaştığımız <span class="text-primary-600">Alanlar</span>
+                </h2>
+                <p class="text-xl text-secondary-600 dark:text-secondary-300 max-w-3xl mx-auto">
+                    Modern teknolojiler ile veri analizi ve web geliştirme çözümleri sunuyoruz
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-white dark:bg-secondary-700 p-8 rounded-2xl corporate-shadow hover:corporate-shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up">
+                    <div class="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-secondary-900 dark:text-white mb-3">Veri Analizi</h3>
+                    <p class="text-secondary-600 dark:text-secondary-300 leading-relaxed">
+                        Karmaşık veri setlerini anlamlı içgörülere dönüştüren analitik çözümler
+                    </p>
+                </div>
+                
+                <div class="group bg-white dark:bg-secondary-700 p-8 rounded-2xl corporate-shadow hover:corporate-shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up delay-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-secondary-900 dark:text-white mb-3">Web Geliştirme</h3>
+                    <p class="text-secondary-600 dark:text-secondary-300 leading-relaxed">
+                        Modern web teknolojileri ile responsive ve kullanıcı dostu web uygulamaları
+                    </p>
+                </div>
+                
+                <div class="group bg-white dark:bg-secondary-700 p-8 rounded-2xl corporate-shadow hover:corporate-shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up delay-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-python text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-secondary-900 dark:text-white mb-3">Python Geliştirme</h3>
+                    <p class="text-secondary-600 dark:text-secondary-300 leading-relaxed">
+                        Ölçeklenebilir veri işleme araçları ve otomasyon çözümleri geliştirme
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-secondary text-white relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-500/5 to-accent-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-accent-500/5 to-primary-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold mb-4">
+                    Güvenilir <span class="text-primary-300">İstatistikler</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Profesyonel deneyim ve başarılı proje geçmişimiz rakamlarla
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center">
+                <div class="group p-8 glass-effect rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 animate-scale-in">
+                    <div class="text-gray-400 text-sm font-medium mb-2 uppercase tracking-wider">Tamamlanan Projeler</div>
+                    <div class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-2">
+                        {{ total_projects }}+
+                    </div>
+                    <div class="text-gray-300 text-sm">Başarılı Proje</div>
+                </div>
+                
+                <div class="group p-8 glass-effect rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 animate-scale-in delay-100">
+                    <div class="text-gray-400 text-sm font-medium mb-2 uppercase tracking-wider">Blog İçeriği</div>
+                    <div class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-accent-400 to-primary-400 bg-clip-text text-transparent mb-2">
+                        {{ total_posts }}+
+                    </div>
+                    <div class="text-gray-300 text-sm">Teknik Makale</div>
+                </div>
+                
+                <div class="group p-8 glass-effect rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 animate-scale-in delay-200">
+                    <div class="text-gray-400 text-sm font-medium mb-2 uppercase tracking-wider">Toplam Görüntüleme</div>
+                    <div class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-2">
+                        {% if total_views and total_views > 0 %}{{ total_views }}+{% else %}1.2K+{% endif %}
+                    </div>
+                    <div class="text-gray-300 text-sm">Sayfa Görüntüleme</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white dark:bg-secondary-800 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-primary-500/5 to-accent-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-64 h-64 bg-gradient-to-br from-accent-500/5 to-primary-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="animate-fade-in">
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold text-secondary-900 dark:text-white mb-6">
+                    Projeniz İçin <span class="text-primary-600">Hazır mısınız?</span>
+                </h2>
+                <p class="text-xl text-secondary-600 dark:text-secondary-300 mb-8 leading-relaxed">
+                    Veri analizi ve web geliştirme projelerinizde profesyonel destek alın. Birlikte 
+                    verilerinizi değerli içgörülere ve fikirlerinizi dijital çözümlere dönüştürelim.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact/" class="group bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 corporate-shadow-lg inline-flex items-center justify-center">
+                        <i class="fas fa-comments mr-2"></i>
+                        <span>İletişime Geçin</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="/blog/" class="group border-2 border-primary-600 text-primary-600 dark:text-primary-400 px-8 py-4 rounded-xl font-semibold hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                        <i class="fas fa-book-open mr-2"></i>
+                        <span>Blog Yazılarını İnceleyin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

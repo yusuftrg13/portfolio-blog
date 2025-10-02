@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: portfolio-blog
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn --bind 0.0.0.0:$PORT portfolio_blog.wsgi:application --settings=portfolio_blog.settings_production"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: DJANGO_SETTINGS_MODULE
+        value: portfolio_blog.settings_production
+      - key: DEBUG
+        value: False
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: portfolio-blog-db
+          property: connectionString
+      - key: SECURE_SSL_REDIRECT
+        value: True
+      - key: SECURE_HSTS_SECONDS
+        value: 31536000
+      - key: SECURE_HSTS_INCLUDE_SUBDOMAINS
+        value: True
+      - key: SECURE_HSTS_PRELOAD
+        value: True
+
+databases:
+  - name: portfolio-blog-db
+    databaseName: portfolio_blog
+    user: portfolio_user

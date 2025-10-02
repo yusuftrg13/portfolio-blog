@@ -1,0 +1,126 @@
+{% extends 'base/base_simple.html' %}
+{% load static %}
+
+{% block title %}Projeler - Yusuf Turgay Çiğer{% endblock %}
+{% block meta_description %}Web geliştirme, veri analizi ve iş analizi projelerim{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Projeler
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Web geliştirme, veri analizi ve iş analizi alanlarında gerçekleştirdiğim projeler.
+            </p>
+        </div>
+
+        <!-- Projects Grid -->
+        {% if projects %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {% for project in projects %}
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                {% if project.featured_image %}
+                <img src="{{ project.featured_image.url }}" alt="{{ project.image_alt_text|default:project.title }}" 
+                     class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center">
+                    <span class="text-white text-6xl font-bold">{{ project.title.0|upper }}</span>
+                </div>
+                {% endif %}
+                
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                        <a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            {{ project.title }}
+                        </a>
+                    </h2>
+                    
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        {{ project.summary|default:project.description|truncatewords:25 }}
+                    </p>
+                    
+                    <!-- Tech Stack -->
+                    {% if project.tech_stack.all %}
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        {% for tech in project.tech_stack.all %}
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-sm">
+                            {{ tech.name }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium">
+                            Detayları Gör →
+                        </a>
+                        {% if project.demo_url %}
+                        <a href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer" 
+                           class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300">
+                            Demo ↗
+                        </a>
+                        {% endif %}
+                        {% if project.repo_url %}
+                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer" 
+                           class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300">
+                            GitHub ↗
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if projects.has_other_pages %}
+        <div class="flex justify-center">
+            <nav class="flex items-center space-x-2">
+                {% if projects.has_previous %}
+                <a href="?page={{ projects.previous_page_number }}" 
+                   class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+                    Önceki
+                </a>
+                {% endif %}
+                
+                <span class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Sayfa {{ projects.number }} / {{ projects.paginator.num_pages }}
+                </span>
+                
+                {% if projects.has_next %}
+                <a href="?page={{ projects.next_page_number }}" 
+                   class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+                    Sonraki
+                </a>
+                {% endif %}
+            </nav>
+        </div>
+        {% endif %}
+        
+        {% else %}
+        <!-- Empty State -->
+        <div class="text-center py-16">
+            <div class="w-24 h-24 mx-auto mb-8 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Henüz Proje Eklenmedi
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Yakında geliştirdiğim projeleri burada paylaşacağım. Takipte kalın!
+            </p>
+            <a href="/" class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
+                Anasayfaya Dön
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

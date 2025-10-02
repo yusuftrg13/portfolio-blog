@@ -1,0 +1,40 @@
+{% extends 'base/base_simple.html' %}
+
+{% block title %}{{ project.title }} - Projeler{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <article class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">{{ project.title }}</h1>
+        
+        <div class="flex items-center text-gray-600 dark:text-gray-300 mb-6">
+            <span>{{ project.created_at|date:"d M Y" }}</span>
+            {% if project.technology_stack %}
+            <span class="mx-2">•</span>
+            <span>{{ project.technology_stack }}</span>
+            {% endif %}
+        </div>
+        
+        {% if project.featured_image %}
+        <img src="{{ project.featured_image.url }}" alt="{{ project.title }}" class="w-full h-64 object-cover rounded-lg mb-6">
+        {% endif %}
+        
+        <div class="prose dark:prose-invert max-w-none">
+            {{ project.description|safe }}
+        </div>
+        
+        <div class="mt-8 flex space-x-4">
+            {% if project.demo_url %}
+            <a href="{{ project.demo_url }}" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                Canlı Demo
+            </a>
+            {% endif %}
+            {% if project.repo_url %}
+            <a href="{{ project.repo_url }}" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition">
+                GitHub
+            </a>
+            {% endif %}
+        </div>
+    </article>
+</div>
+{% endblock %}
