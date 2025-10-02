@@ -1,17 +1,10 @@
 {
-  "builds": [
-    {
-      "src": "portfolio_blog/wsgi_vercel.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb"
-      }
+  "functions": {
+    "index.py": {
+      "runtime": "python3.9"
     }
-  ],
+  },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "portfolio_blog/wsgi_vercel.py"
-    }
+    { "src": "/(.*)", "dest": "/index.py" }
   ]
 }
